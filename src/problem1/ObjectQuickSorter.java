@@ -33,7 +33,7 @@ package problem1;
 
 public class ObjectQuickSorter {
 	@SuppressWarnings("rawtypes")
-	private void doQuickSort(Comparable[] array, int start, int end) {
+	private static void doQuickSort(Comparable[] array, int start, int end) {
 		if(start < end) {
 			int pivotIndex = partition(array, start, end);
 			doQuickSort(array, start, pivotIndex - 1);
@@ -43,7 +43,7 @@ public class ObjectQuickSorter {
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	private int partition(Comparable[] array, int start, int end) {
+	private static int partition(Comparable[] array, int start, int end) {
 		int i = start;
 		int j = end;
 		
@@ -63,12 +63,12 @@ public class ObjectQuickSorter {
 	}
 	
 	@SuppressWarnings("rawtypes")
-	public void quickSort(Comparable[] array) {
+	public static void quickSort(Comparable[] array) {
 		doQuickSort(array, 0, array.length - 1);
 	}
 	
 	@SuppressWarnings("rawtypes")
-	private void swap(Comparable[] array, int a, int b) {
+	private static void swap(Comparable[] array, int a, int b) {
 		Comparable<?> temp = array[a];
 		array[a] = array[b];
 		array[b] = temp;

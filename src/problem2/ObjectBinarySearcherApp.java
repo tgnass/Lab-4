@@ -17,8 +17,7 @@ public class ObjectBinarySearcherApp {
 		do {
 			System.out.print("Enter a value to search for: ");
 			String value = input.nextLine();
-			ObjectBinarySeacher objectBinarySearch = new ObjectBinarySeacher();
-			int position = objectBinarySearch.search(array, value);
+			int position = ObjectBinarySeacher.search(array, value);
 			if(position > -1) {
 				System.out.println(value +" was found at position " + position);
 			} else {

@@ -10,7 +10,7 @@ public class HighLowApp {
 		for(int i = 0; i < array.length; i++) {
 			System.out.print(array[i] + " ");
 		}
-		
+		System.out.println();
 		HighLow<String> highLow = new HighLow<String>(array);
 		System.out.println("The lowest value:");
 		System.out.println(highLow.getLowest());

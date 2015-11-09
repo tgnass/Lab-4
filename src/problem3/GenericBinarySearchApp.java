@@ -15,8 +15,7 @@ public class GenericBinarySearchApp {
 			System.out.print(array[i] + " ");
 		}
 		System.out.println();
-		ObjectQuickSorter objectQuickSort = new ObjectQuickSorter();
-		objectQuickSort.quickSort(array);		
+		GenericQuickSorter.quickSort(array);		
 		System.out.println("Array contenets:");
 		for(int i = 0; i < array.length; i++) {
 			System.out.print(array[i] + " ");
@@ -26,8 +25,7 @@ public class GenericBinarySearchApp {
 		do {
 			System.out.print("Enter a value to search for: ");
 			String value = input.nextLine();
-			ObjectBinarySeacher<String> objectBinarySearch = new ObjectBinarySeacher<String>();
-			int position = objectBinarySearch.search(array, value);
+			int position = GenericBinarySeacher.search(array, value);
 			if(position > -1) {
 				System.out.println(value +" was found at position " + position);
 			} else {

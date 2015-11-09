@@ -33,7 +33,7 @@ package problem2;
 
 public class ObjectBinarySeacher {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public int search(Comparable[] array, Comparable value) {
+	public static int search(Comparable[] array, Comparable value) {
 		int mid;
 		int low = 0;
 		int high = array.length - 1;

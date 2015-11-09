@@ -10,14 +10,12 @@ public class HighLow <T extends Comparable<T>> {
 	}
 	
 	public T getHighest() {
-		ObjectQuickSorter<T> objectQuickSort = new ObjectQuickSorter<>();
-		objectQuickSort.quickSort(array);
+		GenericQuickSorter.quickSort(array);
 		return array[array.length - 1];		
 	}
 	
 	public T getLowest() {
-		ObjectQuickSorter<T> objectQuickSort = new ObjectQuickSorter<>();
-		objectQuickSort.quickSort(array);		
+		GenericQuickSorter.quickSort(array);		
 		return array[0];
 	}
 

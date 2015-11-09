@@ -31,43 +31,24 @@ work.
 
 package problem3;
 
-public class ObjectQuickSorter <T extends Comparable<T>> {
-	private void doQuickSort(T[] array, int start, int end) {
-		if(start < end) {
-			int pivotIndex = partition(array, start, end);
-			doQuickSort(array, start, pivotIndex - 1);
-			doQuickSort(array, pivotIndex + 1, end);
-		}
-		
-	}
+public class GenericBinarySeacher {
 
-	private int partition(T[] array, int start, int end) {
-		int i = start;
-		int j = end;
+	public static <T> int search(T[] array, T value) {
+		int mid;
+		int low = 0;
+		int high = array.length - 1;
 		
-		while(i <= j) {
-			if(array[i].compareTo(array[start]) <= 0) {
-				i++;
-			} else if(array[j].compareTo(array[start]) > 0) {
-				j--;
-			} else if(j < i) {
-				break;
+		while(low <= high) {
+			mid = (low + high) / 2;
+			if(((Comparable<T>) array[mid]).compareTo(value) < 0) {
+				low = mid + 1;
+			} else if(((Comparable<T>) array[mid]).compareTo(value) > 0) {
+				high = mid - 1;
 			} else {
-				swap(array, i, j);
+				return mid;
 			}
 		}
-		swap(array, start, j);
-		return j;
+		
+		return -1;
 	}
-
-	public void quickSort(T[] array) {
-		doQuickSort(array, 0, array.length - 1);
-	}
-	
-	private void swap(T[] array, int a, int b) {
-		T temp = array[a];
-		array[a] = array[b];
-		array[b] = temp;
-	}
-
 }

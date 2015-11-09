@@ -12,8 +12,7 @@ public class ObjectQuickSortApp {
 		}
 		System.out.println();
 		System.out.println("Sorted order:");
-		ObjectQuickSorter objectQuickSort = new ObjectQuickSorter();
-		objectQuickSort.quickSort(array);
+		ObjectQuickSorter.quickSort(array);
 		for(int i = 0; i < array.length; i++) {
 			System.out.print(array[i] + " ");
 		}
